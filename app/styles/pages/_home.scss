@@ -1,0 +1,144 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #23293F;
+  font-family: 'Helvetica';
+}
+
+#results {
+  color: red;
+  text-align: center;
+  max-width: 1400px;
+  display: block;
+  margin: 4em auto;
+}
+
+.element {
+  height: 300px;
+  margin: 80px;
+  display: inline-block;
+  position: relative;
+  box-shadow: -20px 20px 15px #131829;
+}
+
+header {
+  border-bottom: 2px solid #FA6900;
+  margin: 0 2%;
+}
+
+h1 {
+  color: #FA6900;
+  margin: 1em 0 0;
+  display: inline-block;
+}
+
+ul {
+  display: inline-block;
+  float: right;
+  margin: 2.5em 0 0;
+}
+
+li {
+  display: inline;
+  padding: 0.5em;
+}
+
+a {
+  text-decoration: none;
+  color: #FA6900;
+  font-size: 1.3em;
+}
+
+h2 {
+  width: 100%;
+  position: absolute;
+  color: #FA6900;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  font-size: 1.5em;
+}
+
+img {
+  height: 100%;
+}
+
+.play-btn, .pause-btn {
+  cursor: pointer;
+  z-index: 999;
+}
+
+.play-btn {
+  position: absolute;
+  display: block;
+	width: 0;
+	height: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-left: auto;
+  margin-right: auto;
+	border-top: 40px solid transparent;
+	border-left: 60px solid #FA6900;
+	border-bottom: 40px solid transparent;
+}
+
+.pause-btn {
+  display: none;
+  position: absolute;
+	width: 0;
+	height: 0;
+  top: 40%;
+  left: 45%;
+  transform: translate(-45%, -40%);
+  margin-left: auto;
+  margin-right: auto;
+	border-top: 40px solid transparent;
+	border-left: 60px solid #FA6900;
+	border-bottom: 40px solid transparent;
+  border: 0;
+  padding-left: 28px;
+  color: #444;
+}
+
+.pause-btn:before {
+    width: 20px;
+    height: 70px;
+    border: 10px solid #f60;
+    border-width: 0 20px;
+    margin-top: -7px;
+    background: transparent;
+}
+
+.pause-btn:before, .play-btn:before,
+.play-btn:after, .pause-btn:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+}
+
+.play-btn.hidden {
+  display: none;
+}
+
+.pause-btn.visible {
+  display: block;
+}
+
+.overlay {
+  background: #131829;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.4;
+}
