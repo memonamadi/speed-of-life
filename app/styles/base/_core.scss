@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
 	font-size: responsive 1em 1.25em;
 	font-range: 32em 81.25em;
@@ -5,4 +9,11 @@ html {
 
 body {
   font-size: 100%;
+  background-color: $base-colour-b;
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+}
+
+body, html {
+  height: 100%;
 }

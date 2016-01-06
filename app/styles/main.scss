@@ -1,17 +1,14 @@
 // bower:scss
 // endbower
 
-// Base
-@import 'base/reset';
-@import 'base/core';
-
-// Components
-@import 'components/navigation';
-
 // Helpers
 @import 'helpers/mixins';
 @import 'helpers/variables';
 @import 'helpers/helpers';
+
+// Base
+@import 'base/reset';
+@import 'base/core';
 
 // Layout
 @import 'layout/header';

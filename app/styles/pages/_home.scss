@@ -1,144 +1,126 @@
-* {
-  box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
 
-body, html {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background: #23293F;
-  font-family: 'Helvetica';
-}
-
-#results {
-  color: red;
+#tracks {
   text-align: center;
   max-width: 1400px;
   display: block;
-  margin: 4em auto;
+  margin: 6em auto;
+  z-index: 1;
 }
 
-.element {
-  height: 300px;
-  margin: 80px;
+.track {
+  height: 150px;
+  margin: 15px;
   display: inline-block;
   position: relative;
-  box-shadow: -20px 20px 15px #131829;
-}
-
-header {
-  border-bottom: 2px solid #FA6900;
-  margin: 0 2%;
-}
-
-h1 {
-  color: #FA6900;
-  margin: 1em 0 0;
-  display: inline-block;
-}
-
-ul {
-  display: inline-block;
-  float: right;
-  margin: 2.5em 0 0;
-}
-
-li {
-  display: inline;
-  padding: 0.5em;
-}
-
-a {
-  text-decoration: none;
-  color: #FA6900;
-  font-size: 1.3em;
+  box-shadow: -20px 20px 15px $base-colour-c;
+  z-index: 1;
+  @media all and (min-width: $bp-m) {
+    margin: 20px;
+    height: 250px;
+  }
 }
 
 h2 {
   width: 100%;
   position: absolute;
-  color: #FA6900;
+  color: $base-color-a;
   left: 50%;
+  top: 10px;
   transform: translateX(-50%);
   z-index: 999;
-  font-size: 1.5em;
+  font-size: 1em;
+  @media all and (min-width: $bp-m) {
+    font-size: 1.5em;
+  }
 }
 
 img {
   height: 100%;
 }
 
-.play-btn, .pause-btn {
-  cursor: pointer;
-  z-index: 999;
-}
-
-.play-btn {
-  position: absolute;
-  display: block;
-	width: 0;
-	height: 0;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin-left: auto;
-  margin-right: auto;
-	border-top: 40px solid transparent;
-	border-left: 60px solid #FA6900;
-	border-bottom: 40px solid transparent;
-}
-
-.pause-btn {
-  display: none;
-  position: absolute;
-	width: 0;
-	height: 0;
-  top: 40%;
-  left: 45%;
-  transform: translate(-45%, -40%);
-  margin-left: auto;
-  margin-right: auto;
-	border-top: 40px solid transparent;
-	border-left: 60px solid #FA6900;
-	border-bottom: 40px solid transparent;
-  border: 0;
-  padding-left: 28px;
-  color: #444;
-}
-
-.pause-btn:before {
-    width: 20px;
-    height: 70px;
-    border: 10px solid #f60;
-    border-width: 0 20px;
-    margin-top: -7px;
-    background: transparent;
-}
-
-.pause-btn:before, .play-btn:before,
-.play-btn:after, .pause-btn:after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 0;
-}
-
-.play-btn.hidden {
-  display: none;
-}
-
-.pause-btn.visible {
-  display: block;
-}
-
 .overlay {
-  background: #131829;
+  background: $base-colour-c;
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   opacity: 0.4;
+}
+
+.play-btn {
+  height: 50px;
+  width: 50px;
+  display: block;
+  margin: 0 auto;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+}
+
+.left {
+  height: 100%;
+  float: left;
+  background-color: $base-color-a;
+  width: 50%;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  overflow: hidden;
+}
+
+.right {
+  height: 100%;
+  float: right;
+  width: 50%;
+  background-color: $base-color-a;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+.pause .left {
+  width: 36%;
+}
+
+.pause .right {
+  width: 36%;
+}
+
+.pause .triangle-1 {
+  -webkit-transform: translate(0, -100%);
+          transform: translate(0, -100%);
+}
+
+.pause .triangle-2 {
+  -webkit-transform: translate(0, 100%);
+          transform: translate(0, 100%);
+}
+
+.triangle-1,
+.triangle-2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  width: 0;
+  height: 0;
+  border-right: 50px solid rgba(19, 24, 41, 0.4);
+  border-top: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+  -webkit-transition: -webkit-transform 0.25s ease;
+  transition: -webkit-transform 0.25s ease;
+  transition: transform 0.25s ease;
+  transition: transform 0.25s ease, -webkit-transform 0.25s ease;
+}
+
+.triangle-1 {
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+.triangle-2 {
+  -webkit-transform: translate(0, 50%);
+          transform: translate(0, 50%);
 }
